@@ -1,12 +1,20 @@
 package com.devsuperior.movieflix.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity(name ="tb_role")
-public class Role {
+public class Role implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-	Long id;
-	String authority;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String authority;
 	
 	public Role() {
 		
