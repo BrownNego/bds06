@@ -12,8 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-@Entity(name="tb_movie")
+@Entity
+@Table(name="tb_movie")
 public class Movie implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -46,6 +48,10 @@ public class Movie implements Serializable {
 		this.year = year;
 		this.imgUrl = img_url;
 		this.synopsis = synopsis;
+	}
+	
+	public Movie(Long id) {
+		this.id = id;
 	}
 	
 	public Movie(Movie movie) {
